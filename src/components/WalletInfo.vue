@@ -71,7 +71,7 @@ export default {
       return `https://dev.kulap.io/libra/#/receive?address=${this.userAddress}`
     },
     shareText () {
-      return `Hi there, this's my Libra Wallet!
+      return `Hi there, this's my Libra Merchant!
       Please send Libra coin to me at address :
       ${this.userAddress}`
     }
