@@ -6,6 +6,7 @@ import ScanQR from './views/ScanQR'
 import Stats from './views/Stats'
 import Merchant from './views/Merchant'
 import Checkout from './views/Checkout'
+import ThankYou from './views/ThankYou'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/checkout',
       name: 'Checkout',
       component: Checkout
+    },
+    {
+      path: '/thankyou',
+      name: 'ThankYou',
+      component: ThankYou
     },
     {
       path: '/blog',

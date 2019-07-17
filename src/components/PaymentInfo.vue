@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       size: 260,
-      receiverAddress: 'e498567610d2611539817b19a610867489622a6dfbc97870ddbd2bc368d588d3'
+      receiverAddress: 'c5ec44a24834833e5a4214a47138f0cdee43e37ad7ea3b2ad17cd8a1b13fd845'
     }
   },
   computed: {
