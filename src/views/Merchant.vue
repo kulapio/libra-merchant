@@ -1,6 +1,8 @@
 <template>
   <div class="content">
     <ItemList />
+    <br />
+    <br />
     <div class="buttons" style="margin: 0 auto;width: fit-content;">
       <b-button type="is-primary" size="is-large" @click="openCheckout()">PAY <span v-if="this.total != 0">({{ this.total | numberWithCommas }})</span></b-button>
       <b-button type="is-primary" size="is-large" @click="clear()">Clear</b-button>
