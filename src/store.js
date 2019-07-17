@@ -11,7 +11,7 @@ export default new Vuex.Store({
     balance: '',
     mnemonic: '',
     toAddress: '',
-    total: BigNumber('120')
+    total: BigNumber('0')
   },
   actions: {
     updateUserData ({ commit }, { userAddress, userAddressShort, balance, mnemonic }) {
