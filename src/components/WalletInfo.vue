@@ -54,7 +54,7 @@ import QrcodeVue from 'qrcode.vue'
 import { mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'Wallet',
+  name: 'WalletInfo',
   components: {
     QrcodeVue
   },

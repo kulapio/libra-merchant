@@ -10,7 +10,7 @@ import WalletInfo from '@/components/WalletInfo'
 import Footer from '@/components/Footer'
 
 export default {
-  name: 'home',
+  name: 'receive',
   components: {
     WalletInfo,
     Footer

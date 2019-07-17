@@ -32,7 +32,7 @@ import config from '@/config.json'
 import axios from 'axios'
 
 export default {
-  name: 'Wallet',
+  name: 'Stats',
   data () {
     return {
       wallets: '',

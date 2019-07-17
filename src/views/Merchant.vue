@@ -57,7 +57,7 @@ import { mapActions, mapState } from 'vuex'
 import BigNumber from 'bignumber.js'
 
 export default {
-  name: 'home',
+  name: 'merchant',
   components: {
     WalletInfo,
     Footer
@@ -100,7 +100,7 @@ export default {
       return images('./' + pet + '.jpg')
     },
     openCheckout () {
-      this.$router.push({ name: 'Checkout', query: { address: this.userAddress } })
+      this.$router.push({ name: 'Checkout' })
     },
     order (item) {
       this.updateTotal(this.total.plus(BigNumber(item.price)))

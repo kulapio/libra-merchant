@@ -50,7 +50,7 @@ import { mapActions, mapState } from 'vuex'
 import VueElementLoading from 'vue-element-loading'
 
 export default {
-  name: 'Wallet',
+  name: 'Transfer',
   data () {
     return {
       address: '',

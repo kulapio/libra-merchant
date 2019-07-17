@@ -35,7 +35,7 @@
 import { QrcodeStream } from 'vue-qrcode-reader'
 
 export default {
-  name: 'Wallet',
+  name: 'QRScanner',
   components: {
     QrcodeStream
   },

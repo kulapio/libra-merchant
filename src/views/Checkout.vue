@@ -10,7 +10,7 @@ import PaymentInfo from '@/components/PaymentInfo'
 import Footer from '@/components/Footer'
 
 export default {
-  name: 'home',
+  name: 'checkout',
   components: {
     PaymentInfo,
     Footer

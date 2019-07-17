@@ -24,7 +24,7 @@ import QrcodeVue from 'qrcode.vue'
 import { mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'Wallet',
+  name: 'PaymentInfo',
   components: {
     QrcodeVue
   },
@@ -56,13 +56,13 @@ export default {
     }
   },
   created () {
-    if (this.$route.query && this.$route.query.address) {
-      this.updateUserAddress(this.$route.query.address)
-    } else if (this.userAddress) {
-      this.updateUserAddress(this.userAddress)
-    } else {
-      this.$router.push({ name: 'Wallet' })
-    }
+    // if (this.$route.query && this.$route.query.address) {
+    //   this.updateUserAddress(this.$route.query.address)
+    // } else if (this.userAddress) {
+    //   this.updateUserAddress(this.userAddress)
+    // } else {
+    //   this.$router.push({ name: 'Wallet' })
+    // }
   },
   methods: {
     ...mapActions({

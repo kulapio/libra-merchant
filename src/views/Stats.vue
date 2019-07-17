@@ -8,7 +8,7 @@
 import Stats from '@/components/Stats'
 
 export default {
-  name: 'home',
+  name: 'status',
   components: {
     Stats
   }

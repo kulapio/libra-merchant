@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home'
 import Send from './views/Send'
 import Receive from './views/Receive'
 import ScanQR from './views/ScanQR'
@@ -16,11 +15,6 @@ export default new Router({
       path: '/',
       name: 'Merchant',
       component: Merchant
-    },
-    {
-      path: '/wallet',
-      name: 'Wallet',
-      component: Home
     },
     {
       path: '/send',

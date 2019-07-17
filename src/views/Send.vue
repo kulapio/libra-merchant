@@ -9,7 +9,7 @@
 import Transfer from '@/components/Transfer'
 
 export default {
-  name: 'home',
+  name: 'send',
   components: {
     Transfer
   }

@@ -9,7 +9,7 @@
 import QRScanner from '@/components/QRScanner'
 
 export default {
-  name: 'home',
+  name: 'scanQR',
   components: {
     QRScanner
   }
