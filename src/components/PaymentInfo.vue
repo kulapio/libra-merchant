@@ -1,6 +1,19 @@
 <template>
   <div class="wallet-container">
-    <div class="card">
+    <div
+        v-if="!this.receiverAddress"
+        class="creating-wallet"
+      >
+      <span>
+        Generating payment address ...
+      </span>
+      <vue-loading
+        type="bars"
+        color="#7957d5"
+        :size="{ width: '50px', height: '50px' }"
+      />
+    </div>
+    <div v-else class="card">
       <qrcode-vue
         :value="qrText"
         :size="size"
@@ -28,10 +41,10 @@ export default {
   components: {
     QrcodeVue
   },
+  props: ['receiverAddress'],
   data () {
     return {
-      size: 260,
-      receiverAddress: 'c5ec44a24834833e5a4214a47138f0cdee43e37ad7ea3b2ad17cd8a1b13fd845'
+      size: 260
     }
   },
   computed: {

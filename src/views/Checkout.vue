@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PaymentInfo/>
+    <PaymentInfo :receiverAddress="receiverAddress"/>
     <b-button type="is-primary" size="is-large" @click="back()">Back</b-button>
   </div>
 </template>
@@ -22,13 +22,15 @@ export default {
   },
   data () {
     return {
-      receiverAddress: 'c5ec44a24834833e5a4214a47138f0cdee43e37ad7ea3b2ad17cd8a1b13fd845',
+      receiverAddress: '',
       checkBalanceInterval: null,
       checkEveryMs: 2000
     }
   },
-  mounted () {
-    this.checkBalanceInterval = setInterval(this.queryBalance, this.checkEveryMs)
+  async mounted () {
+    const walelt = await this.createMerchantWallet()
+    this.receiverAddress = walelt.address
+    this.checkBalanceInterval = setInterval(this.checkBalance, this.checkEveryMs)
   },
   beforeDestroy () {
     clearInterval(this.checkBalanceInterval)
@@ -42,7 +44,8 @@ export default {
     ...mapActions({
       updateTotal: 'updateTotal'
     }),
-    async queryBalance () {
+    async checkBalance () {
+      console.log(`checking balance ${this.receiverAddress}`)
       const { data } = await axios.post(config.api + '/getBalance', { address: this.receiverAddress })
       console.log('user balance', data.balance, 'target amount', this.total.toString(10))
       if (BigNumber(data.balance).gte(this.total)) {
@@ -50,6 +53,11 @@ export default {
         clearInterval(this.checkBalanceInterval)
         this.$router.push({ name: 'ThankYou', query: { amountReceived: BigNumber(data.balance) } })
       }
+    },
+    async createMerchantWallet () {
+      const { data } = await axios.post(config.api + '/createWallet', { minting: false })
+      console.log(JSON.stringify(data))
+      return data
     },
     back () {
       this.updateTotal(BigNumber(0))
