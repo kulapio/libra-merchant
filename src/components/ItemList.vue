@@ -4,7 +4,7 @@
       <div v-for="item in group" v-bind:key="item.title" class="tile is-parent">
         <article v-if="item.title === 'empty'" class="tile is-child box hidden">
         </article>
-        <article v-else class="tile is-child box">
+        <article v-else class="tile is-child box pointer" @click="order(item)">
           <p class="title">{{ item.title }}</p>
           <p class="subtitle">{{ item.subtitle }}</p>
             <img :src="require(`../assets/img/${item.image}.jpg`)"
@@ -179,5 +179,8 @@ export default {
 }
 .hidden {
   display: none;
+}
+.pointer {
+  cursor: pointer;
 }
 </style>
