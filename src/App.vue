@@ -3,13 +3,14 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/stats">Stats</router-link> |
+      <router-link to="/merchant">Merchant</router-link> |
       <router-link to="/blog">Blog</router-link>
     </div>
     <router-link to="/">
-      <img
-        src="@/assets/img/logo.png"
-        class="header-image"
-      >
+    <img src="@/assets/img/logo/kulap-bakery-logo.jpg"
+        srcset="@/assets/img/logo/kulap-bakery-logo@2x.jpg 2x,
+                @/assets/img/logo/kulap-bakery-logo@3x.jpg 3x"
+        class="kulap-bakery-logo">
     </router-link>
     <router-view/>
     <Footer/>
@@ -48,5 +49,11 @@ export default {
 .header-image {
   height: 70px;
   cursor: pointer;
+}
+.kulap-bakery-logo {
+  width: 279px;
+  height: 157px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 </style>
