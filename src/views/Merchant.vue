@@ -40,6 +40,9 @@
         </article>
       </div>
     </div>
+    <div class="buttons" style="margin: 0 auto;width: fit-content;">
+      <b-button type="is-primary" size="is-large" @click="openCheckout()">Checkout</b-button>
+    </div>
   </div>
 </template>
 
@@ -87,6 +90,9 @@ export default {
     getImgUrl (pet) {
       var images = require.context('../assets/img/', false, /\.jpg$/)
       return images('./' + pet + '.jpg')
+    },
+    openCheckout () {
+      this.$router.push({ name: 'Checkout', query: { address: this.userAddress } })
     }
   }
 }

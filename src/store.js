@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import BigNumber from 'bignumber.js'
 
 Vue.use(Vuex)
 
@@ -9,7 +10,8 @@ export default new Vuex.Store({
     userAddressShort: '',
     balance: '',
     mnemonic: '',
-    toAddress: ''
+    toAddress: '',
+    total: BigNumber('120')
   },
   actions: {
     updateUserData ({ commit }, { userAddress, userAddressShort, balance, mnemonic }) {
@@ -20,6 +22,9 @@ export default new Vuex.Store({
     },
     updateUserAddress ({ commit }, address) {
       commit('updateUserAddress', address)
+    },
+    updateTotal ({ commit }, newTotal) {
+      commit('updateTotal', newTotal)
     }
   },
   mutations: {
@@ -34,6 +39,9 @@ export default new Vuex.Store({
     },
     updateUserAddress (state, payload) {
       state.userAddress = payload
+    },
+    updateTotal (state, payload) {
+      state.total = payload
     }
   }
 })
