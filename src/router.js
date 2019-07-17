@@ -14,6 +14,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Merchant',
+      component: Merchant
+    },
+    {
+      path: '/wallet',
       name: 'Wallet',
       component: Home
     },
@@ -36,11 +41,6 @@ export default new Router({
       path: '/stats',
       name: 'Stats',
       component: Stats
-    },
-    {
-      path: '/merchant',
-      name: 'Merchant',
-      component: Merchant
     },
     {
       path: '/checkout',
