@@ -16,6 +16,7 @@
               </svg>
               <span class="item-price">{{ item.price | numberWithCommas }}</span>
             </div>
+            <b-button type="is-info" size="is-large" @click="order(item)">Order</b-button>
           </div>
         </article>
       </div>
@@ -36,12 +37,14 @@
               </svg>
               <span class="item-price">{{ item.price | numberWithCommas }}</span>
             </div>
+            <b-button type="is-info" size="is-large" @click="order(item)">Order</b-button>
           </div>
         </article>
       </div>
     </div>
     <div class="buttons" style="margin: 0 auto;width: fit-content;">
-      <b-button type="is-primary" size="is-large" @click="openCheckout()">Checkout</b-button>
+      <b-button type="is-primary" size="is-large" @click="openCheckout()">Checkout {{ this.total | numberWithCommas }}</b-button>
+      <b-button type="is-primary" size="is-large" @click="clear()">Clear</b-button>
     </div>
   </div>
 </template>
@@ -50,6 +53,8 @@
 // @ is an alias to /src
 import WalletInfo from '@/components/WalletInfo'
 import Footer from '@/components/Footer'
+import { mapActions, mapState } from 'vuex'
+import BigNumber from 'bignumber.js'
 
 export default {
   name: 'home',
@@ -87,13 +92,28 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      updateTotal: 'updateTotal'
+    }),
     getImgUrl (pet) {
       var images = require.context('../assets/img/', false, /\.jpg$/)
       return images('./' + pet + '.jpg')
     },
     openCheckout () {
       this.$router.push({ name: 'Checkout', query: { address: this.userAddress } })
+    },
+    order (item) {
+      this.updateTotal(this.total.plus(BigNumber(item.price)))
+      console.log(this.total.toString(10))
+    },
+    clear () {
+      this.updateTotal(BigNumber(0))
     }
+  },
+  computed: {
+    ...mapState({
+      total: state => state.total
+    })
   }
 }
 </script>
