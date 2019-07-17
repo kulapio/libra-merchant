@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <g fill="none" fill-rule="evenodd" transform="translate(0 -3)">
+        <text fill="#7A49FF" font-family="Avenir-Heavy, Avenir" font-size="21" font-weight="600">
+            <tspan x="5.172" y="21.759">~</tspan>
+        </text>
+        <text fill="#7A49FF" font-family="Avenir-Heavy, Avenir" font-size="21" font-weight="600">
+            <tspan x="5.172" y="26.069">~</tspan>
+        </text>
+        <text fill="#7A49FF" font-family="Avenir-Heavy, Avenir" font-size="21" font-weight="600">
+            <tspan x="5.172" y="30.379">~</tspan>
+        </text>
+        <circle cx="12.5" cy="15.5" r="12" stroke="#512DA8"/>
+    </g>
+</svg>
