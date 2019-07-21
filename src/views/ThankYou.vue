@@ -29,6 +29,7 @@
 
 <script>
 import BigNumber from 'bignumber.js'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'thankyou',
@@ -44,8 +45,6 @@ export default {
       parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
       return parts.join('.')
     }
-  },
-  components: {
   },
   created () {
     if (this.$route.query && this.$route.query.amountReceived) {
@@ -63,7 +62,11 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      clearItems: 'clearItems'
+    }),
     back () {
+      this.clearItems()
       this.$router.push({ name: 'Merchant' })
     }
   }
