@@ -6,19 +6,22 @@
 Live
 ----
 
-[Libra Merchant](https://dev.kulap.io/libra/)
+[Libra Merchant](https://www.libracoffee.io/)
 
 Docs
 ----
 
-- [The First Libra Merchant Building your own Wallet and APIs](https://medium.com/kulapofficial/the-first-libra-wallet-poc-building-your-own-wallet-and-apis-3cb578c0bd52?postPublishedType=repub)
-
+TBD
 
 Run
 ---
 
 - npm install
 - npm run serve
+
+Build
+-----
+- npm run build
 
 
 Contributors
