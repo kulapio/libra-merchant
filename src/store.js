@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    items: [],
     userAddress: '',
     userAddressShort: '',
     balance: '',
@@ -25,6 +26,12 @@ export default new Vuex.Store({
     },
     updateTotal ({ commit }, newTotal) {
       commit('updateTotal', newTotal)
+    },
+    addItem ({ commit }, item) {
+      commit('addItem', item)
+    },
+    clearItems ({ commit }) {
+      commit('clearItems')
     }
   },
   mutations: {
@@ -42,6 +49,20 @@ export default new Vuex.Store({
     },
     updateTotal (state, payload) {
       state.total = payload
+    },
+    addItem (state, item) {
+      const i = state.items.findIndex(it => it.title === item.title)
+      if (state.items.length && i !== -1) {
+        const newItem = state.items[i]
+        newItem.amount++
+        Vue.set(state.items, i, newItem)
+      } else {
+        state.items.push({ ...item, amount: 1 })
+      }
+    },
+    clearItems (state) {
+      state.items = []
+      state.total = BigNumber('0')
     }
   }
 })

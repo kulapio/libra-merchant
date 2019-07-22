@@ -1,7 +1,9 @@
 <template>
   <div>
     <PaymentInfo :receiverAddress="receiverAddress"/>
-    <b-button type="is-primary" size="is-large" @click="back()">Back</b-button>
+    <div class="back-btn" @click="back()">
+      Back
+    </div>
   </div>
 </template>
 
@@ -42,7 +44,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      updateTotal: 'updateTotal'
+      updateTotal: 'updateTotal',
+      clearItems: 'clearItems'
     }),
     async checkBalance () {
       console.log(`checking balance ${this.receiverAddress}`)
@@ -60,9 +63,27 @@ export default {
       return data
     },
     back () {
-      this.updateTotal(BigNumber(0))
+      this.clearItems()
       this.$router.push({ name: 'Merchant' })
     }
   }
 }
 </script>
+
+<style scoped>
+.back-btn {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+  background-color: #9013fe;
+  font-family: Avenir;
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+</style>
+

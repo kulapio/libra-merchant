@@ -1,22 +1,24 @@
 <template>
-  <div class="content">
-    <div v-for="group in groupItmes" v-bind:key="group[0].title" class="tile is-ancestor">
-      <div v-for="item in group" v-bind:key="item.title" class="tile is-parent">
-        <article v-if="item.title === 'empty'" class="tile is-child box hidden">
-        </article>
-        <article v-else class="tile is-child box pointer" @click="order(item)">
-          <p class="title">{{ item.title }}</p>
-          <p class="subtitle">{{ item.subtitle }}</p>
-            <img :src="require(`../assets/img/${item.image}.jpg`)"
-                  :srcset="require(`../assets/img/${item.image}@2x.jpg`) + ' 2x,' + require(`../assets/img/${item.image}@3x.jpg`) + ' 3x'"
-                class="Image-coffee1">
-          <div style="width:100%;">
-            <div style="width:fit-content;margin: 0 auto;">
-              <img :src="require(`../assets/img/libra/icon-libra2.svg`)" class="icon-libra">
-              <span class="item-price">{{ item.price | numberWithCommas }}</span>
-            </div>
-          </div>
-        </article>
+  <div class="columns is-multiline is-mobile">
+    <div
+      v-for="(item, i) in items"
+      :key="i"
+      class="column is-4"
+    >
+      <div class="item" @click="order(item)">
+        <div class="item-title is-dots">
+          {{ item.title }}
+        </div>
+        <div class="sub is-dots">
+          {{ item.subtitle }}
+        </div>
+        <div class="img-item">
+          <img :src="require(`../assets/img/${item.image}.jpg`)">
+        </div>
+        <div class="price">
+          <img :src="require('@/assets/img/libra/icon-libra.png')">
+          <span>{{ item.price | numberWithCommas }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -71,7 +73,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      updateTotal: 'updateTotal'
+      updateTotal: 'updateTotal',
+      addItem: 'addItem'
     }),
     getImgUrl (pet) {
       var images = require.context('../assets/img/', false, /\.jpg$/)
@@ -82,6 +85,7 @@ export default {
     },
     order (item) {
       this.updateTotal(this.total.plus(BigNumber(item.price)))
+      this.addItem(item)
       console.log(this.total.toString(10))
     },
     clear () {
@@ -119,68 +123,57 @@ export default {
 }
 </script>
 
-<style scoped>
-.content {
-  width: 639px;
-  margin: 0 auto;
+<style lang="scss" scoped>
+.item {
+  cursor: pointer;
+  padding: 12px 10px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
-.title {
-  text-align: left;
+.item-title {
   font-family: Avenir;
   font-size: 20px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #666666;
 }
-.subtitle {
-  text-align: left;
+.sub {
   font-family: Avenir;
   font-size: 13px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #919191;
 }
-.Image-coffee1 {
-  width: 144.4px;
-  height: 144.4px;
-  object-fit: contain;
-}
-.item-image {
-  width: 42px;
-  height: 42px;
-  display: inline-block;
-  fill: currentColor;
-  color: #42318c;
-}
-.icon-libra {
-  width: 20px;
-  height: 22px;
-  object-fit: contain;
-}
-.item-price {
-  display: inline-block;
-  font-family: Avenir;
-  font-size: 18px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
+.img-item {
+  width: 100%;
   text-align: center;
-  color: #7a49ff;
-  vertical-align: super;
-  margin-left: 5px;
+  padding-top: 15px;
+  img {
+    height: 120px;
+  }
 }
-.hidden {
-  display: none;
+.price {
+  margin-top: 15px;
+  text-align: center;
+  * {
+    line-height: 25px;
+    vertical-align: middle;
+  }
+  img {
+    height: 25px;
+    margin-right: 10px;
+  }
+  span {
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    color: #7a49ff;
+    line-height: 25px;
+    vertical-align: middle;
+  }
 }
-.pointer {
-  cursor: pointer;
+.is-dots {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

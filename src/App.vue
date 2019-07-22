@@ -1,26 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
+    <div class="left">
+      <Sidebar/>
     </div>
-    <router-link to="/">
-    <img src="@/assets/img/logo/kulap-bakery-logo.jpg"
-        srcset="@/assets/img/logo/kulap-bakery-logo@2x.jpg 2x,
-                @/assets/img/logo/kulap-bakery-logo@3x.jpg 3x"
-        class="kulap-bakery-logo">
-    </router-link>
-    <router-view/>
-    <Footer/>
+    <div class="right">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
-import Footer from '@/components/Footer'
+import Sidebar from '@/components/Sidebar'
 
 export default {
   name: 'App',
   components: {
-    Footer
+    Sidebar
   }
 }
 </script>
@@ -30,27 +25,22 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  max-height: 100vh;
 }
-#nav {
-  padding: 30px;
+.left {
+  float: left;
+  width: 226px;
 }
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-.header-image {
-  height: 70px;
-  cursor: pointer;
-}
-.kulap-bakery-logo {
-  width: 279px;
-  height: 157px;
-  object-fit: contain;
-  margin-bottom: 20px;
+.right {
+  float: left;
+  width: calc(100vw - 226px);
+  height: 100vh;
+  padding: 1.5rem;
+  overflow: auto;
+  background-image: url("/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
