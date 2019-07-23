@@ -70,13 +70,10 @@ export default new Vuex.Store({
     deleteItem (state, item) {
       const i = state.items.findIndex(it => it.title === item.title)
       if (state.items.length && i !== -1) {
-        if (state.items[i].amount > 1) {
-          const newItem = state.items[i]
-          newItem.amount--
-          Vue.set(state.items, i, newItem)
-        } else {
-          state.items = state.items.filter(a => a.title !== item.title)
-        }
+        state.items = state.items.filter(a => a.title !== item.title)
+        state.total = state.items.reduce((total, item) => {
+          return BigNumber(total).plus(BigNumber(item.price))
+        }, 0)
       }
     },
     clearItems (state) {
