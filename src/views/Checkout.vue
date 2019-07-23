@@ -27,14 +27,16 @@ export default {
       receiverAddress: '',
       checkBalanceInterval: null,
       checkEveryMs: 2000,
-      isPaid: false
+      cancelToken: null,
+      source: null
     }
   },
   async mounted () {
     const walelt = await this.createMerchantWallet()
-    this.isPaid = false
     this.receiverAddress = walelt.address
     this.checkBalanceInterval = setInterval(this.checkBalance, this.checkEveryMs)
+    this.cancelToken = axios.CancelToken
+    this.source = this.cancelToken.source()
   },
   beforeDestroy () {
     clearInterval(this.checkBalanceInterval)
@@ -51,13 +53,13 @@ export default {
     }),
     async checkBalance () {
       console.log(`checking balance ${this.receiverAddress}`)
-      const { data } = await axios.post(config.api + '/getBalance', { address: this.receiverAddress })
+      const { data } = await axios.post(config.api + '/getBalance', { address: this.receiverAddress }, { cancelToken: this.source.token })
       console.log('user balance', data.balance, 'target amount', this.total.toString(10))
-      if (BigNumber(data.balance).gte(this.total) && !this.isPaid) {
+      if (BigNumber(data.balance).gte(this.total)) {
+        this.source.cancel()
         this.updateTotal(BigNumber(0))
         clearInterval(this.checkBalanceInterval)
         this.$router.push({ name: 'ThankYou', query: { amountReceived: BigNumber(data.balance) } })
-        this.isPaid = true
       }
     },
     async createMerchantWallet () {
@@ -66,6 +68,8 @@ export default {
       return data
     },
     back () {
+      this.source.cancel()
+      clearInterval(this.checkBalanceInterval)
       this.clearItems()
       this.$router.push({ name: 'Merchant' })
     }
