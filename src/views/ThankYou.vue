@@ -1,6 +1,6 @@
 <template>
   <div class="thanks">
-    <img src="https://cdn.dribbble.com/users/1735807/screenshots/4290582/03.gif">
+    <img class="payment-success-img" src="https://cdn.dribbble.com/users/1735807/screenshots/4290582/03.gif">
     <div class="text">
       Your payment success ({{ this.amountReceived || numberWithCommas }} Libra)
       <div>
@@ -10,20 +10,6 @@
     <div class="back-btn" @click="back()">
       Continue
     </div>
-    <!-- <section class="hero is-success">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Thank you
-          </h1>
-          <h2 class="subtitle">
-            We've received 
-          </h2>
-        </div>
-      </div>
-    </section>
-    <br />
-    <b-button type="is-primary" size="is-large" @click="back()">Back</b-button> -->
   </div>
 </template>
 
@@ -82,8 +68,10 @@ export default {
   border-radius: 3px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
 
-  img {
+  .payment-success-img {
     border-radius: 3px;
+    width: 400px;
+    height: 300px;
   }
   .text {
     font-size: 24px;

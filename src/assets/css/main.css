@@ -11,3 +11,8 @@ body {
   overflow:hidden !important;
   text-overflow: ellipsis;
 }
+/* CustomFont.eot */
+@font-face {
+  font-family: "Avenir";
+  src: url("./avenir-font/AvenirLTStd-Medium.woff");
+}

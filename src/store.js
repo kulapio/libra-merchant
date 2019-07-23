@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    menuPage: 'coffee',
     items: [],
     userAddress: '',
     userAddressShort: '',
@@ -30,8 +31,14 @@ export default new Vuex.Store({
     addItem ({ commit }, item) {
       commit('addItem', item)
     },
+    deleteItem ({ commit }, item) {
+      commit('deleteItem', item)
+    },
     clearItems ({ commit }) {
       commit('clearItems')
+    },
+    setMenuPage ({ commit }, menu) {
+      commit('updateMenuPage', menu)
     }
   },
   mutations: {
@@ -59,10 +66,25 @@ export default new Vuex.Store({
       } else {
         state.items.push({ ...item, amount: 1 })
       }
+      state.total = state.items.reduce((total, item) => {
+        return BigNumber(total).plus(BigNumber(item.price).multipliedBy(item.amount))
+      }, 0)
+    },
+    deleteItem (state, item) {
+      const i = state.items.findIndex(it => it.title === item.title)
+      if (state.items.length && i !== -1) {
+        state.items = state.items.filter(a => a.title !== item.title)
+        state.total = state.items.reduce((total, item) => {
+          return BigNumber(total).plus(BigNumber(item.price).multipliedBy(item.amount))
+        }, 0)
+      }
     },
     clearItems (state) {
       state.items = []
       state.total = BigNumber('0')
+    },
+    updateMenuPage (state, menu) {
+      state.menuPage = menu
     }
   }
 })

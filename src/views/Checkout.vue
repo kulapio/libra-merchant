@@ -26,11 +26,13 @@ export default {
     return {
       receiverAddress: '',
       checkBalanceInterval: null,
-      checkEveryMs: 2000
+      checkEveryMs: 2000,
+      isPaid: false
     }
   },
   async mounted () {
     const walelt = await this.createMerchantWallet()
+    this.isPaid = false
     this.receiverAddress = walelt.address
     this.checkBalanceInterval = setInterval(this.checkBalance, this.checkEveryMs)
   },
@@ -51,10 +53,11 @@ export default {
       console.log(`checking balance ${this.receiverAddress}`)
       const { data } = await axios.post(config.api + '/getBalance', { address: this.receiverAddress })
       console.log('user balance', data.balance, 'target amount', this.total.toString(10))
-      if (BigNumber(data.balance).gte(this.total)) {
+      if (BigNumber(data.balance).gte(this.total) && !this.isPaid) {
         this.updateTotal(BigNumber(0))
         clearInterval(this.checkBalanceInterval)
         this.$router.push({ name: 'ThankYou', query: { amountReceived: BigNumber(data.balance) } })
+        this.isPaid = true
       }
     },
     async createMerchantWallet () {
@@ -86,4 +89,3 @@ export default {
   cursor: pointer;
 }
 </style>
-

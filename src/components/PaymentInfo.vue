@@ -2,18 +2,21 @@
   <div class="wallet-container">
     <div
         v-if="!this.receiverAddress"
-        class="creating-wallet"
+        class="card"
       >
-      <span>
-        Generating payment address ...
-      </span>
-      <vue-loading
-        type="bars"
-        color="#7957d5"
-        :size="{ width: '50px', height: '50px' }"
-      />
+      <img src="https://cdn.dribbble.com/users/1187836/screenshots/6012802/13-qrcode.gif">
+      <div>
+        Generating payment ...
+      </div>
     </div>
-    <div v-else class="card">
+    <div v-else class="card pd-t-36px">
+      <div class="mg-bt-25px">
+        Use
+        <a href="https://dev.kulap.io/libra" target="_blank">
+          <b>KULAP Libra wallet POC</b>
+        </a>
+        to pay with scan QR code.
+      </div>
       <qrcode-vue
         :value="qrText"
         :size="size"
@@ -22,8 +25,9 @@
       />
       <div class="address content">
         <div>
-          Please pay to
+          or copy address below to pay with other <b>Libra Wallet</b> manually.
         </div>
+        <br>
         <b>{{ receiverAddress }}</b>
       </div>
       <div>
@@ -116,6 +120,9 @@ export default {
 </script>
 
 <style lang="scss">
+.card {
+  margin-top: 0 !important;
+}
 .card-footer-item {
   padding: 0 !important;
   border: 0 !important;
@@ -132,6 +139,12 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.pd-t-36px {
+  padding-top: 36px;
+}
+.mg-bt-25px {
+  margin-bottom: 25px;
+}
 .wallet-container {
   min-height: calc(100vh - 230px);
   width: 100%;
