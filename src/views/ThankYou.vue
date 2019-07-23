@@ -1,6 +1,6 @@
 <template>
   <div class="thanks">
-    <img src="https://cdn.dribbble.com/users/1735807/screenshots/4290582/03.gif">
+    <img class="payment-success-img" src="https://cdn.dribbble.com/users/1735807/screenshots/4290582/03.gif">
     <div class="text">
       Your payment success ({{ this.amountReceived || numberWithCommas }} Libra)
       <div>
@@ -36,9 +36,9 @@ export default {
     if (this.$route.query && this.$route.query.amountReceived) {
       this.amountReceived = this.$route.query.amountReceived
     }
-    setInterval(() => {
-      this.timeout--
-    }, 1000)
+    // setInterval(() => {
+    //   this.timeout--
+    // }, 1000)
   },
   watch: {
     timeout (val) {
@@ -68,8 +68,10 @@ export default {
   border-radius: 3px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
 
-  img {
+  .payment-success-img {
     border-radius: 3px;
+    width: 400px;
+    height: 300px;
   }
   .text {
     font-size: 24px;
