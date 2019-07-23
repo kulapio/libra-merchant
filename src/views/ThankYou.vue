@@ -36,9 +36,9 @@ export default {
     if (this.$route.query && this.$route.query.amountReceived) {
       this.amountReceived = this.$route.query.amountReceived
     }
-    // setInterval(() => {
-    //   this.timeout--
-    // }, 1000)
+    setInterval(() => {
+      this.timeout--
+    }, 1000)
   },
   watch: {
     timeout (val) {
