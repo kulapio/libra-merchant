@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div class="left">
+    <div class="ctn-left">
       <Sidebar/>
     </div>
-    <div class="right">
+    <div class="ctn-right">
       <router-view/>
     </div>
   </div>
@@ -22,25 +22,23 @@ export default {
 
 <style scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
-.left {
+.ctn-left {
   float: left;
   width: 226px;
 }
-.right {
+.ctn-right {
   float: left;
-  width: calc(100vw - 226px);
+  width: calc(100% - 226px);
   height: 100vh;
   padding: 1.5rem;
-  overflow: auto;
   background-image: url("/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 </style>

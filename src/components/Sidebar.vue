@@ -1,5 +1,5 @@
 <template>
-  <div class="ctn">
+  <div class="sidebar-ctn">
     <img class="logo" src="@/assets/img/logo/app-logo.jpg">
     <img class="libra-logo" src="@/assets/img/logo.png">
     <div class="divider mg-bt-40px"/>
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ctn {
+.sidebar-ctn {
   width: 100%;
   padding: 20px;
   height: 100vh;
@@ -81,12 +81,12 @@ export default {
   position: relative;
 }
 .logo {
-  width: 100%;
+  width: 100px;
 }
 .libra-logo {
   width: 120px;
   float: right;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .divider {
   width: 100%;
@@ -95,7 +95,7 @@ export default {
   background-color: #dedede;
 }
 .mg-bt-40px {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .menu-item {
   cursor: pointer;
@@ -105,7 +105,7 @@ export default {
   font-size: 20px;
   font-weight: 500;
   color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   padding-left: 10px;
   text-align: left;
 
@@ -128,23 +128,26 @@ export default {
   padding: 0;
   text-align: center;
   margin-bottom: 15px;
+  padding: 0 5px;
 
   .kulap {
     img {
-      width: 40px;
+      width: 25px;
       margin-right: 10px;
-      line-height: 40px;
+      line-height: 25px;
       vertical-align: middle;
     }
     span {
       font-weight: bold;
-      line-height: 40px;
+      line-height: 25px;
       vertical-align: middle;
-      font-size: 30px;
+      font-size: 20px;
     }
   }
 
   .credit {
+    margin-top: 10px;
+    font-size: 14px;
     a {
       font-weight: bold;
     }

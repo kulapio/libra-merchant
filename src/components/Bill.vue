@@ -16,26 +16,27 @@
         </div>
         <div class="column"/>
       </div>
-      <div
-        v-for="(item, i) in items"
-        :key="i"
-        class="table-body columns"
-      >
-        <div class="column is-half is-dots">
-          {{ item.title }}
-        </div>
-        <div class="column">
-          {{ item.amount }}
-        </div>
-        <div class="column">
-          {{ item.price }}
-        </div>
-        <div class="column">
-          <img
-            class="del-btn"
-            src="@/assets/img/delete.svg"
-            @click="clickDeleteItem(item)"
-          >
+      <div class="ovf-auto">
+        <div
+          v-for="(item, i) in items"
+          :key="i"
+          class="table-body columns">
+          <div class="column is-half is-dots">
+            {{ item.title }}
+          </div>
+          <div class="column">
+            {{ item.amount }}
+          </div>
+          <div class="column">
+            {{ item.price }}
+          </div>
+          <div class="column">
+            <img
+              class="del-btn"
+              src="@/assets/img/delete.svg"
+              @click="clickDeleteItem(item)"
+            >
+          </div>
         </div>
       </div>
       <div class="summary">
@@ -53,9 +54,9 @@
     <div class="pay-button" @click="openCheckout()">
       PAY ({{ total | numberWithCommas }})
     </div>
-    <div class="clear-button" @click="clear()">
+    <!-- <div class="clear-button" @click="clear()">
       CLEAR
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -98,6 +99,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ovf-auto {
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 130px);
+}
+
 .bill {
   width: 100%;
 

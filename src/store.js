@@ -67,7 +67,7 @@ export default new Vuex.Store({
         state.items.push({ ...item, amount: 1 })
       }
       state.total = state.items.reduce((total, item) => {
-        return BigNumber(total).plus(BigNumber(item.price))
+        return BigNumber(total).plus(BigNumber(item.price).multipliedBy(item.amount))
       }, 0)
     },
     deleteItem (state, item) {
@@ -75,7 +75,7 @@ export default new Vuex.Store({
       if (state.items.length && i !== -1) {
         state.items = state.items.filter(a => a.title !== item.title)
         state.total = state.items.reduce((total, item) => {
-          return BigNumber(total).plus(BigNumber(item.price))
+          return BigNumber(total).plus(BigNumber(item.price).multipliedBy(item.amount))
         }, 0)
       }
     },
