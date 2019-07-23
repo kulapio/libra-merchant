@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    menuPage: 'coffee',
     items: [],
     userAddress: '',
     userAddressShort: '',
@@ -32,6 +33,9 @@ export default new Vuex.Store({
     },
     clearItems ({ commit }) {
       commit('clearItems')
+    },
+    setMenuPage ({ commit }, menu) {
+      commit('updateMenuPage', menu)
     }
   },
   mutations: {
@@ -63,6 +67,9 @@ export default new Vuex.Store({
     clearItems (state) {
       state.items = []
       state.total = BigNumber('0')
+    },
+    updateMenuPage (state, menu) {
+      state.menuPage = menu
     }
   }
 })

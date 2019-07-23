@@ -10,20 +10,6 @@
     <div class="back-btn" @click="back()">
       Continue
     </div>
-    <!-- <section class="hero is-success">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Thank you
-          </h1>
-          <h2 class="subtitle">
-            We've received 
-          </h2>
-        </div>
-      </div>
-    </section>
-    <br />
-    <b-button type="is-primary" size="is-large" @click="back()">Back</b-button> -->
   </div>
 </template>
 

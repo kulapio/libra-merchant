@@ -57,7 +57,6 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import BigNumber from 'bignumber.js'
 
 export default {
   name: 'Bill',

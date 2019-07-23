@@ -1,7 +1,7 @@
 <template>
   <div class="columns is-multiline is-mobile">
     <div
-      v-for="(item, i) in items"
+      v-for="(item, i) in items[menuPage]"
       :key="i"
       class="column is-4"
     >
@@ -13,7 +13,7 @@
           {{ item.subtitle }}
         </div>
         <div class="img-item">
-          <img :src="require(`../assets/img/${item.image}.jpg`)">
+          <img :src="require(`../assets/img/${item.image}`)">
         </div>
         <div class="price">
           <img :src="require('@/assets/img/libra/icon-libra.png')">
@@ -27,6 +27,7 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import BigNumber from 'bignumber.js'
+import { menuList } from '@/constants'
 
 export default {
   name: 'ItemList',
@@ -39,36 +40,7 @@ export default {
   },
   data () {
     return {
-      items: [{
-        title: 'Espresso',
-        subtitle: 'Blue Ridge Blend',
-        price: 4.35,
-        image: 'espresso/image-coffee-1'
-      },
-      {
-        title: 'Choco Frappe',
-        subtitle: 'Locally Roasted',
-        price: 7.00,
-        image: 'choco_frappe/image-coffee-2'
-      },
-      {
-        title: 'Caramel Frappe',
-        subtitle: 'Decaf Colombia',
-        price: 7.50,
-        image: 'caramel_frappe/image-coffee-3'
-      },
-      {
-        title: 'Kick Frappe',
-        subtitle: 'Locally Roasted',
-        price: 7.50,
-        image: 'kick_frappe/image-coffee-4'
-      },
-      {
-        title: 'Cappuccino',
-        subtitle: 'Decaf Colombia',
-        price: 4.50,
-        image: 'cappuccino/image-coffee-5'
-      }]
+      items: menuList
     }
   },
   methods: {
@@ -94,7 +66,8 @@ export default {
   },
   computed: {
     ...mapState({
-      total: state => state.total
+      total: state => state.total,
+      menuPage: state => state.menuPage
     }),
     groupItmes () {
       let groups = []
