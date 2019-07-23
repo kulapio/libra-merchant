@@ -31,6 +31,9 @@ export default new Vuex.Store({
     addItem ({ commit }, item) {
       commit('addItem', item)
     },
+    deleteItem ({ commit }, item) {
+      commit('deleteItem', item)
+    },
     clearItems ({ commit }) {
       commit('clearItems')
     },
@@ -62,6 +65,18 @@ export default new Vuex.Store({
         Vue.set(state.items, i, newItem)
       } else {
         state.items.push({ ...item, amount: 1 })
+      }
+    },
+    deleteItem (state, item) {
+      const i = state.items.findIndex(it => it.title === item.title)
+      if (state.items.length && i !== -1) {
+        if (state.items[i].amount > 1) {
+          const newItem = state.items[i]
+          newItem.amount--
+          Vue.set(state.items, i, newItem)
+        } else {
+          state.items = state.items.filter(a => a.title !== item.title)
+        }
       }
     },
     clearItems (state) {

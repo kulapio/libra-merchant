@@ -31,7 +31,11 @@
           {{ item.price }}
         </div>
         <div class="column">
-          del
+          <img
+            class="del-btn"
+            src="@/assets/img/delete.svg"
+            @click="clickDeleteItem(item)"
+          >
         </div>
       </div>
       <div class="summary">
@@ -75,7 +79,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      clearItems: 'clearItems'
+      clearItems: 'clearItems',
+      deleteItem: 'deleteItem'
     }),
     openCheckout () {
       if (this.items.length) {
@@ -84,6 +89,9 @@ export default {
     },
     clear () {
       this.clearItems()
+    },
+    clickDeleteItem (item) {
+      this.deleteItem(item)
     }
   }
 }
@@ -176,5 +184,8 @@ export default {
     padding: 20px;
     cursor: pointer;
   }
+}
+.del-btn {
+  cursor: pointer;
 }
 </style>
