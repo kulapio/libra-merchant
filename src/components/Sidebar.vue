@@ -1,6 +1,6 @@
 <template>
   <div class="ctn">
-    <img class="logo" src="@/assets/img/logo/kulap-bakery-logo@2x.jpg">
+    <img class="logo" src="@/assets/img/logo/app-logo.jpg">
     <img class="libra-logo" src="@/assets/img/logo.png">
     <div class="divider mg-bt-40px"/>
     <div class="menu-item" @click="selectMenu('coffee')">
@@ -32,6 +32,15 @@
       <span :class="{ 'is-active': menuPage === 'specialdrink'  }">
         Special Drinks
       </span>
+    </div>
+    <div class="footer">
+      <div class="kulap">
+        <img src="@/assets/img/logo/KULAP-LOGO.png">
+        <span>KULAP</span>
+      </div>
+      <div class="credit">
+        Sponsored by <a href="https://www.kulap.io/" target="_blank">KULAP.io</a>, The Best Rate Decentralized Exchange.
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +78,7 @@ export default {
   box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
   text-align: center;
+  position: relative;
 }
 .logo {
   width: 100%;
@@ -109,5 +119,35 @@ export default {
 .is-active {
   border-bottom: solid 5px #512da8;
   padding-right: 20px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 15px;
+
+  .kulap {
+    img {
+      width: 40px;
+      margin-right: 10px;
+      line-height: 40px;
+      vertical-align: middle;
+    }
+    span {
+      font-weight: bold;
+      line-height: 40px;
+      vertical-align: middle;
+      font-size: 30px;
+    }
+  }
+
+  .credit {
+    a {
+      font-weight: bold;
+    }
+  }
 }
 </style>
