@@ -44,7 +44,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            s3deploy -source=dist/ -region=ap-southeast-1 -bucket=www.libracoffee.io -public-access
+            s3deploy -source=dist/ -region=us-east-1 -bucket=www.libracoffee.io -public-access
 
 # ===== Workflows =====
 workflows:
