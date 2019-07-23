@@ -56,9 +56,7 @@ export default {
       this.$router.push({ name: 'Checkout' })
     },
     order (item) {
-      this.updateTotal(this.total.plus(BigNumber(item.price)))
       this.addItem(item)
-      console.log(this.total.toString(10))
     },
     clear () {
       this.updateTotal(BigNumber(0))

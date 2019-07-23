@@ -66,6 +66,9 @@ export default new Vuex.Store({
       } else {
         state.items.push({ ...item, amount: 1 })
       }
+      state.total = state.items.reduce((total, item) => {
+        return BigNumber(total).plus(BigNumber(item.price))
+      }, 0)
     },
     deleteItem (state, item) {
       const i = state.items.findIndex(it => it.title === item.title)
