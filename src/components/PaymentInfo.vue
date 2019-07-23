@@ -64,7 +64,8 @@ export default {
         type: 'peer_to_peer_payment',
         address: this.receiverAddress,
         amount: this.total.toString(10),
-        merchant: 'Libra Coffee'
+        // merchant: 'Libra Coffee'
+        merchant: 'CLASS CAFE'
       })
     },
     shareUrl () {
