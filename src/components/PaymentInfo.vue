@@ -13,9 +13,9 @@
       <div class="mg-bt-25px">
         Use
         <a href="https://dev.kulap.io/libra" target="_blank">
-          <b>KULAP Libra wallet POC</b>
+          <b>KULAP Libra Wallet POC</b>
         </a>
-        to pay with scan QR code.
+        to pay by scanning QR code.
       </div>
       <qrcode-vue
         :value="qrText"
