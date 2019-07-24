@@ -4,7 +4,7 @@
         v-if="!this.receiverAddress"
         class="card"
       >
-      <img src="https://cdn.dribbble.com/users/1187836/screenshots/6012802/13-qrcode.gif">
+      <img class="generating-img" src="https://cdn.dribbble.com/users/1187836/screenshots/6012802/13-qrcode.gif">
       <div>
         Generating payment ...
       </div>
@@ -140,6 +140,9 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.generating-img {
+  height: calc(100% - 50px);
+}
 .pd-t-36px {
   padding-top: 36px;
 }

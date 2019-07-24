@@ -32,11 +32,11 @@ export default {
     }
   },
   async mounted () {
-    const walelt = await this.createMerchantWallet()
-    this.receiverAddress = walelt.address
-    this.checkBalanceInterval = setInterval(this.checkBalance, this.checkEveryMs)
-    this.cancelToken = axios.CancelToken
-    this.source = this.cancelToken.source()
+    // const walelt = await this.createMerchantWallet()
+    // this.receiverAddress = walelt.address
+    // this.checkBalanceInterval = setInterval(this.checkBalance, this.checkEveryMs)
+    // this.cancelToken = axios.CancelToken
+    // this.source = this.cancelToken.source()
   },
   beforeDestroy () {
     clearInterval(this.checkBalanceInterval)
