@@ -79,7 +79,7 @@ export default {
 
 <style scoped>
 .back-btn {
-  width: 90%;
+  width: 200px;
   margin: 0 auto;
   border-radius: 3px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
@@ -91,5 +91,6 @@ export default {
   text-align: center;
   padding: 20px;
   cursor: pointer;
+  margin-top: 30px;
 }
 </style>

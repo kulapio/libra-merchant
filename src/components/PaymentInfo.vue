@@ -147,7 +147,6 @@ export default {
   margin-bottom: 25px;
 }
 .wallet-container {
-  min-height: calc(100vh - 230px);
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -157,12 +156,11 @@ export default {
   padding-top: 2rem;
 }
 .card {
-  width: 90%;
+  width: 100%;
+  height: 440px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 3px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 .address {
   margin-top: 10px;
@@ -201,7 +199,7 @@ export default {
 }
 .total {
   font-size: 55px;
-  margin-left: 20px;
+  margin-left: 10px;
   color: #512da8;
 }
 </style>
