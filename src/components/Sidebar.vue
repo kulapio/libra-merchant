@@ -81,7 +81,7 @@ export default {
   position: relative;
 }
 .logo {
-  width: 100px;
+  width: 150px;
 }
 .libra-logo {
   width: 120px;

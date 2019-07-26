@@ -1,90 +1,90 @@
 export const menuList = {
-  // coffee: [{
-  //   title: 'Espresso',
-  //   subtitle: 'Blue Ridge Blend',
-  //   price: 4.35,
-  //   image: 'menu/coffee/espresso.jpg'
-  // },
-  // {
-  //   title: 'Choco Frappe',
-  //   subtitle: 'Locally Roasted',
-  //   price: 7.00,
-  //   image: 'menu/coffee/choco_frappe.jpg'
-  // },
-  // {
-  //   title: 'Caramel Frappe',
-  //   subtitle: 'Decaf Colombia',
-  //   price: 7.50,
-  //   image: 'menu/coffee/caramel_frappe.jpg'
-  // },
-  // {
-  //   title: 'Kick Frappe',
-  //   subtitle: 'Locally Roasted',
-  //   price: 7.50,
-  //   image: 'menu/coffee/kick_frappe.jpg'
-  // },
-  // {
-  //   title: 'Cappuccino',
-  //   subtitle: 'Decaf Colombia',
-  //   price: 4.50,
-  //   image: 'menu/coffee/cappuccino.jpg'
-  // }],
-
-  // breakfast: [{
-  //   title: 'SET 1',
-  //   subtitle: 'Toast and Pork',
-  //   price: 15.00,
-  //   image: 'menu/breakfast/set1.png'
-  // },
-  // {
-  //   title: 'SET 2',
-  //   subtitle: 'French-Toast',
-  //   price: 15.00,
-  //   image: 'menu/breakfast/set2.png'
-  // },
-  // {
-  //   title: 'SET 3',
-  //   subtitle: 'Taco',
-  //   price: 10.00,
-  //   image: 'menu/breakfast/set3.png'
-  // },
-  // {
-  //   title: 'SET 4',
-  //   subtitle: 'Bacon and Eggs',
-  //   price: 10.00,
-  //   image: 'menu/breakfast/set4.jpg'
-  // },
-  // {
-  //   title: 'SET 5',
-  //   subtitle: 'Bacon , Sausage, Eggs, Toast',
-  //   price: 25.00,
-  //   image: 'menu/breakfast/set5.png'
-  // }],
-
   coffee: [{
-    title: 'Iced Espresso',
-    subtitle: 'Iced Espresso',
-    price: 2.33,
-    image: 'menu/classcafe/IcedEspresso.png'
+    title: 'Espresso',
+    subtitle: 'Blue Ridge Blend',
+    price: 4.35,
+    image: 'menu/coffee/espresso.jpg'
   },
   {
-    title: 'Iced Caramel Machiato',
-    subtitle: 'Iced Caramel Machiato',
-    price: 2.33,
-    image: 'menu/classcafe/IcedCaramelMachiato.png'
+    title: 'Choco Frappe',
+    subtitle: 'Locally Roasted',
+    price: 7.00,
+    image: 'menu/coffee/choco_frappe.jpg'
   },
   {
-    title: 'Iced Cocoa',
-    subtitle: 'Iced Cocoa',
-    price: 2.50,
-    image: 'menu/classcafe/IcedCocoa.png'
+    title: 'Caramel Frappe',
+    subtitle: 'Decaf Colombia',
+    price: 7.50,
+    image: 'menu/coffee/caramel_frappe.jpg'
   },
   {
-    title: 'Cha-Thai',
-    subtitle: 'Cha-Thai',
-    price: 2.50,
-    image: 'menu/classcafe/Cha-Thai.png'
+    title: 'Kick Frappe',
+    subtitle: 'Locally Roasted',
+    price: 7.50,
+    image: 'menu/coffee/kick_frappe.jpg'
+  },
+  {
+    title: 'Cappuccino',
+    subtitle: 'Decaf Colombia',
+    price: 4.50,
+    image: 'menu/coffee/cappuccino.jpg'
   }],
+
+  breakfast: [{
+    title: 'SET 1',
+    subtitle: 'Toast and Pork',
+    price: 15.00,
+    image: 'menu/breakfast/set1.png'
+  },
+  {
+    title: 'SET 2',
+    subtitle: 'French-Toast',
+    price: 15.00,
+    image: 'menu/breakfast/set2.png'
+  },
+  {
+    title: 'SET 3',
+    subtitle: 'Taco',
+    price: 10.00,
+    image: 'menu/breakfast/set3.png'
+  },
+  {
+    title: 'SET 4',
+    subtitle: 'Bacon and Eggs',
+    price: 10.00,
+    image: 'menu/breakfast/set4.jpg'
+  },
+  {
+    title: 'SET 5',
+    subtitle: 'Bacon , Sausage, Eggs, Toast',
+    price: 25.00,
+    image: 'menu/breakfast/set5.png'
+  }],
+
+  // coffee: [{
+  //   title: 'Iced Espresso',
+  //   subtitle: 'Iced Espresso',
+  //   price: 2.33,
+  //   image: 'menu/classcafe/IcedEspresso.png'
+  // },
+  // {
+  //   title: 'Iced Caramel Machiato',
+  //   subtitle: 'Iced Caramel Machiato',
+  //   price: 2.33,
+  //   image: 'menu/classcafe/IcedCaramelMachiato.png'
+  // },
+  // {
+  //   title: 'Iced Cocoa',
+  //   subtitle: 'Iced Cocoa',
+  //   price: 2.50,
+  //   image: 'menu/classcafe/IcedCocoa.png'
+  // },
+  // {
+  //   title: 'Cha-Thai',
+  //   subtitle: 'Cha-Thai',
+  //   price: 2.50,
+  //   image: 'menu/classcafe/Cha-Thai.png'
+  // }],
 
   breakfast: [{
     title: 'SET 1',
