@@ -30,37 +30,6 @@ export const menuList = {
     image: 'menu/coffee/cappuccino.jpg'
   }],
 
-  breakfast: [{
-    title: 'SET 1',
-    subtitle: 'Toast and Pork',
-    price: 15.00,
-    image: 'menu/breakfast/set1.png'
-  },
-  {
-    title: 'SET 2',
-    subtitle: 'French-Toast',
-    price: 15.00,
-    image: 'menu/breakfast/set2.png'
-  },
-  {
-    title: 'SET 3',
-    subtitle: 'Taco',
-    price: 10.00,
-    image: 'menu/breakfast/set3.png'
-  },
-  {
-    title: 'SET 4',
-    subtitle: 'Bacon and Eggs',
-    price: 10.00,
-    image: 'menu/breakfast/set4.jpg'
-  },
-  {
-    title: 'SET 5',
-    subtitle: 'Bacon , Sausage, Eggs, Toast',
-    price: 25.00,
-    image: 'menu/breakfast/set5.png'
-  }],
-
   // coffee: [{
   //   title: 'Iced Espresso',
   //   subtitle: 'Iced Espresso',
