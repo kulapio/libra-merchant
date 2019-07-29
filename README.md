@@ -1,6 +1,6 @@
 # Libra Merchant for Testnet
 
-![Libra Merchant](https://raw.githubusercontent.com/kulapio/libra-merchant/master/src/assets/img/logo/app-logo2.jpg?token=AADQJCDTUGZOUL4MN4SUD7C5ICDPC)
+![Libra Merchant](https://raw.githubusercontent.com/kulapio/libra-merchant/master/src/assets/img/logo/app-logo.jpg?token=AADQJCDTUGZOUL4MN4SUD7C5ICDPC)
 
 
 Live
