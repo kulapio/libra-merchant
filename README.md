@@ -3,6 +3,11 @@
 ![Libra Merchant](https://raw.githubusercontent.com/kulapio/libra-merchant/master/src/assets/img/logo/app-logo.jpg?token=AADQJCDTUGZOUL4MN4SUD7C5ICDPC)
 
 
+Screen Shot
+-----------
+![Libra Merchant Screen Shot](https://raw.githubusercontent.com/kulapio/libra-merchant/master/images/Libra%20Coffee.png)
+
+
 Live
 ----
 
