@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 .sidebar-ctn {
   width: 100%;
-  padding: 20px;
+  padding: 20px 10px;
   height: 100vh;
   box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
