@@ -45,7 +45,7 @@
             Total
           </div>
           <div class="column total">
-            <img :src="require('@/assets/img/libra/icon-libra.png')">
+            <img :src="require('@/assets/img/libra/icon-libra@3x.png')" style="width: 25px; height: 25px;">
             <span>{{ total | numberWithCommas }}</span>
           </div>
         </div>

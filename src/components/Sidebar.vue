@@ -73,30 +73,35 @@ export default {
 <style lang="scss" scoped>
 .sidebar-ctn {
   width: 100%;
-  padding: 20px;
+  padding: 20px 10px;
   height: 100vh;
   box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
   text-align: center;
   position: relative;
 }
+
 .logo {
   width: 150px;
 }
+
 .libra-logo {
   width: 120px;
   float: right;
   margin-bottom: 10px;
 }
+
 .divider {
   width: 100%;
   height: 1px;
   float: left;
   background-color: #dedede;
 }
+
 .mg-bt-40px {
   margin-bottom: 20px;
 }
+
 .menu-item {
   cursor: pointer;
   float: left;
@@ -113,13 +118,16 @@ export default {
     margin-right: 10px;
   }
 }
+
 .menu-item:hover {
   opacity: 0.5;
 }
+
 .is-active {
   border-bottom: solid 5px #512da8;
   padding-right: 20px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -127,8 +135,7 @@ export default {
   right: 0;
   padding: 0;
   text-align: center;
-  margin-bottom: 15px;
-  padding: 0 5px;
+  padding: 15px 5px;
 
   .kulap {
     img {

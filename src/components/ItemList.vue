@@ -16,7 +16,7 @@
           <img :src="require(`../assets/img/${item.image}`)">
         </div>
         <div class="price">
-          <img :src="require('@/assets/img/libra/icon-libra.png')">
+          <img :src="require('@/assets/img/libra/icon-libra@3x.png')">
           <span>{{ item.price | numberWithCommas }}</span>
         </div>
       </div>
