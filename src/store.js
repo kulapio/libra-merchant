@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    menuPage: 'coffee',
+    menuPage: 'xbox',
     items: [],
     userAddress: '',
     userAddressShort: '',

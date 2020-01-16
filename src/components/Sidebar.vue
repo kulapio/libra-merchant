@@ -3,36 +3,28 @@
     <img class="logo" src="@/assets/img/logo/app-logo.jpg">
     <img class="libra-logo" src="@/assets/img/logo.png">
     <div class="divider mg-bt-40px"/>
-    <div class="menu-item" @click="selectMenu('coffee')">
-      <img src="@/assets/img/sidebar-item/coffee.svg">
-      <span :class="{ 'is-active': menuPage === 'coffee'  }">
-        Coffee
+
+    <div class="menu-item" @click="selectMenu('xbox')">
+      <img src="@/assets/img/sidebar-item/xbox.png" width=40 height=40>
+      <span :class="{ 'is-active': menuPage === 'xbox'  }">
+        Xbox
       </span>
     </div>
-    <div class="menu-item" @click="selectMenu('breakfast')">
-      <img src="@/assets/img/sidebar-item/breakfast.svg">
-      <span :class="{ 'is-active': menuPage === 'breakfast'  }">
-        Breakfast
+
+    <div class="menu-item" @click="selectMenu('nintendo')">
+      <img src="@/assets/img/sidebar-item/nintendo.png" width=40 height=40>
+      <span :class="{ 'is-active': menuPage === 'nintendo'  }">
+        Nintendo
       </span>
     </div>
-    <div class="menu-item" @click="selectMenu('snack')">
-      <img src="@/assets/img/sidebar-item/munchies.svg">
-      <span :class="{ 'is-active': menuPage === 'snack'  }">
-        Snack
+
+    <div class="menu-item" @click="selectMenu('playstation')">
+      <img src="@/assets/img/sidebar-item/playstation.png" width=51 height=39>
+      <span :class="{ 'is-active': menuPage === 'playstation'  }">
+        Playstation
       </span>
     </div>
-    <div class="menu-item" @click="selectMenu('fastfood')">
-      <img src="@/assets/img/sidebar-item/sandwiches.svg">
-      <span :class="{ 'is-active': menuPage === 'fastfood'  }">
-        Fast food
-      </span>
-    </div>
-    <div class="menu-item" @click="selectMenu('specialdrink')">
-      <img src="@/assets/img/sidebar-item/special-drinks.svg">
-      <span :class="{ 'is-active': menuPage === 'specialdrink'  }">
-        Special Drinks
-      </span>
-    </div>
+
     <div class="footer">
       <div class="kulap">
         <img src="@/assets/img/logo/KULAP-LOGO.png">
