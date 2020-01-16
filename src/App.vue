@@ -35,7 +35,7 @@ export default {
   width: calc(100% - 226px);
   height: 100vh;
   padding: 1.5rem;
-  background-image: url("/bg.jpg");
+  background-image: url("/classicgame/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

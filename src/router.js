@@ -11,6 +11,7 @@ import ThankYou from './views/ThankYou'
 Vue.use(Router)
 
 export default new Router({
+  base: '/classicgame/',
   mode: 'history',
   routes: [
     {
