@@ -65,7 +65,7 @@ export default {
         address: this.receiverAddress,
         amount: this.total.toString(10),
         // merchant: 'Libra Coffee'
-        merchant: 'CLASS CAFE'
+        merchant: 'KULAP Merchant'
       })
     },
     shareUrl () {
